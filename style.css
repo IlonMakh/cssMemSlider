@@ -5,33 +5,38 @@
 }
 
 body {
-    background-color: #f9f9f9;
+    background: #ac92a6;
 }
 
 .slider__wrapper {
-    width: 500px;
-    height: 500px;
-    position: relative;
+    width: 480px;
+    height: 90%;
     margin: 0 auto;
     margin-top: 30px;
+    background-color: #e9fae3;
+    box-shadow: 0 0 20px #d5c7bc;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
+
 .slider__mems {
-    height: 100%;
-    width: 100%;
-    position: relative;
+    width: 480px;
+    height: 480px;
     overflow: hidden;
-    box-shadow: 0 0 20px #ff6392;
 }
 
 .mem-item {
-    width: 100%;
-    height: 100%;
+    width: 480px;
+    height: 480px;
     position: absolute;
     opacity: 0;
     z-index: 0;
-    transform: scale(2);
-    transition: transform ease-in-out 0.3s, opacity ease-in-out 0.5s;
+    transform: scale(0.75);
+    transition: transform ease-in-out 0.3s, opacity ease-in-out 0.3s;
 
     background-repeat: no-repeat;
     background-size: cover;
@@ -76,48 +81,74 @@ body {
 
 
 .slider__wrapper .slider__controls {
-    position: absolute;
     margin: 0 auto;
-    margin-top: 30px;
+    margin: 20px 0 20px;
     display: flex;
-    left: calc(50% - 79px/2);
 }
 
-.slider__wrapper label {
-    width: 12px;
-    height: 12px;
+.slider__controls .point__wrapper {
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     position: relative;
     cursor: pointer;
+    border: 2px solid #ac92a6;
+    overflow: visible;
+}
+
+.slider__controls label {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    cursor: pointer;
+
+}
+
+.slider__controls .point {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 3px 0 0 3px;
     transition: background ease-in-out 0.3s;
 }
 
-.slider__wrapper label::after {
-    display: block;
-    content: '';
-    width: 16px;
-    height: 16px;
-    position: absolute;
-    border: 2px solid #ff6392;
-    border-radius: 50%;
-    top: -4px;
-    left: -4px;
 
-
-}
 
 .slider__wrapper label:not(:last-child) {
-    margin-right: 20px;
+    margin-right: 5px;
 }
 
-.slider__wrapper label:hover{
-    background: #ffc2d4;
+.slider__controls label:hover .point{
+    background: #d5c7bc;
 }
 
-#mem1:checked ~ .slider__controls label:nth-of-type(1),
-#mem2:checked ~ .slider__controls label:nth-of-type(2),
-#mem3:checked ~ .slider__controls label:nth-of-type(3),
-#mem4:checked ~ .slider__controls label:nth-of-type(4),
-#mem5:checked ~ .slider__controls label:nth-of-type(5){
-    background: #ff6392;
+#mem1:checked ~ .slider__controls label:nth-of-type(1) .point,
+#mem2:checked ~ .slider__controls label:nth-of-type(2) .point,
+#mem3:checked ~ .slider__controls label:nth-of-type(3) .point,
+#mem4:checked ~ .slider__controls label:nth-of-type(4) .point,
+#mem5:checked ~ .slider__controls label:nth-of-type(5) .point {
+    background: #ac92a6;
+}
+
+.slider__description {
+    margin-bottom: 30px;
+}
+
+.mem-comment {
+    font-size: 0;
+    opacity: 0;
+    z-index: 0;
+    transform: scale(0.75);
+    transition: opacity ease-in-out 0.3s, transform ease-in-out 0.3s;
+}
+
+#mem1:checked ~ .slider__description .comment1,
+#mem2:checked ~ .slider__description .comment2,
+#mem3:checked ~ .slider__description .comment3,
+#mem4:checked ~ .slider__description .comment4,
+#mem5:checked ~ .slider__description .comment5 {
+    opacity: 1;
+    z-index: 1;
+    transform: scale(1);
+    font-size: 21px;
 }
