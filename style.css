@@ -134,14 +134,16 @@ body {
     transition: background ease-in-out 0.3s;
 }
 
-
-
 .slider__wrapper label:not(:last-child) {
     margin-right: 0.4vw;
 }
 
 .slider__controls label:hover .point{
     background: #eeb1bb;
+}
+
+.slider__controls label:active .point{
+    background: #e2415c;
 }
 
 .slider__controls label:hover .point__wrapper{
