@@ -219,7 +219,7 @@ body {
     }
     
     .slider__controls label:hover .point__wrapper{
-        border: inherit;
+        border: 0.15vw solid #ac92a6;
     }
     
     .slider__wrapper label:not(:last-child) {
