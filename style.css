@@ -219,7 +219,7 @@ body {
     }
     
     .slider__controls label:hover .point__wrapper{
-        border:#ac92a6;
+        border: 0.3vw solid #ac92a6;
     }
     
     .slider__wrapper label:not(:last-child) {
@@ -284,6 +284,10 @@ body {
         border: 0.5vw solid #ac92a6;
     }
     
+    .slider__controls label:hover .point__wrapper{
+        border: 0.5vw solid #ac92a6;
+    }
+
     .slider__controls label {
         padding: 1.5vw;
     }
