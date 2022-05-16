@@ -6,6 +6,7 @@
 
 body {
     background: url(images/background.jpg);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .slider__wrapper {
@@ -157,6 +158,7 @@ body {
 
 
 .mem-comment {
+    text-align: center;
     font-size: 0;
     opacity: 0;
     transform: scale(0.75);
@@ -216,6 +218,9 @@ body {
         margin: 0.4vw 0 0 0.4vw;
     }
     
+    .slider__controls label:hover .point__wrapper{
+        border: inherit;
+    }
     
     .slider__wrapper label:not(:last-child) {
         margin-right: 0.8vw;
